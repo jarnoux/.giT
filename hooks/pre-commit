@@ -1,1 +1,1 @@
-git status --porcelain | awk '{print $NF}' | grep .js | xargs jslint
+git status --porcelain | awk '{if ($1 != "D") print $NF}' | grep .js | xargs jslint
